@@ -34,23 +34,23 @@ portrait_caption: >-
 
 education:  
 - name: 中国科学院深圳先进技术研究院
-  logo: /assets/images/badges/SIAT.png
+  logo: /assets/images/badges/1.png
   position: 副研究员
   date: 2020.12 - 至今
 - name: 中国科学院深圳先进技术研究院
-  logo: /assets/images/badges/SIAT.png
+  logo: /assets/images/badges/1.png
   position: 博士后、助理研究员
   date: 2018.07 - 2020.12
 - name: 中国科学院地理科学与资源研究所 资源与环境信息系统国家重点实验室
-  logo: /assets/images/badges/地理所.png
+  logo: /assets/images/badges/2.png
   position: 博士
   date: 2012.09 - 2018.06
 - name: 美国加州大学圣巴巴拉分校（UCSB）
-  logo: /assets/images/badges/UCSB.png
+  logo: /assets/images/badges/3.png
   position: 联合培养
   date: 2016.10 - 2017.10
 - name: 中国地质大学（北京）
-  logo: /assets/images/badges/地大.png
+  logo: /assets/images/badges/4.png
   position: 学士
   date: 2008.09 - 2012.06
 

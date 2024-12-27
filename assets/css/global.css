@@ -35,9 +35,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .cover-image {
-    width: 1080px;
-    height: 720px;
-    max-width: none;
+    width: 100%;
+    height: auto;
 }
 
 .abstract-body {

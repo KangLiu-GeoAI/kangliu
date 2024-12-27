@@ -4,6 +4,7 @@ layout: null
 ---
 
 [1] 尹凌, 刘康, 梅树江, 等. 呼吸道传染病时空传播风险精细化评估系统构建与应用[J]. 中国卫生信息管理杂志, 2024, 21(05): 653-660.
+
 [2] Liu K#, Wang F#, He B*, et al., Revisiting the topology of urban road networks with graph embeddings[C]. 2023 China Automation Congress (CAC). IEEE, 2024: XX-XX.
 
 [3] Liu K#, Shi Y#, Wang S, Zhao X, Yin L. Impact of initial outbreak locations on transmission risk of infectious diseases in an intra-urban area[J]. Computational Urban Science, 2024, 4: 23.

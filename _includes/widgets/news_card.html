@@ -8,9 +8,9 @@
             {% for paper in papers %}
             {% for line in paper.content | split: "\n" %}
             {% unless line == "" %}
-            <li class="media py-2 border-bottom border-gray">
-                <div class="media-body">
-                    <div>{{ line }}</div>
+            <li class="media py-1 border-bottom border-gray" style="margin-bottom: 5px;">
+                <div class="media-body" style="margin-bottom: 0;">
+                    <div style="line-height: 1.4;">{{ line }}</div>
                 </div>
             </li>
             {% endunless %}

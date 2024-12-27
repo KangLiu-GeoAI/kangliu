@@ -4,12 +4,12 @@
             <div class="card-body p-4">
                 {% if site.data.profile.education %}
                 <div class="row text-center">
-                    {% for item in site.data.profile.education %}
-                    <div class="col-md-4 col-sm-6 col-12 mb-4">
-                        <div class="education-item">
-                            <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" class="education-logo mb-2">
-                            <div class="education-text">
-                                <div class="font-weight-bold">{{ item.name }}</div>
+                    {% for item in site.data.profile.education limit:5 %}
+                    <div class="col-2">
+                        <div>
+                            <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" class="img-fluid">
+                            <div>
+                                <div>{{ item.name }}</div>
                                 <div class="small text-muted">{{ item.dept }}</div>
                                 <div class="small text-muted">{{ item.position }}</div>
                                 <div class="small text-muted"><em>{{ item.date }}</em></div>

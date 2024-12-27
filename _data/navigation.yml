@@ -6,6 +6,6 @@ pages:
 - name: 发表论文
   url: /publications
 - name: Publications
-url: /publications
+  url: /publications
 - name: Showcase
   url: /showcase

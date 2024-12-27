@@ -45,18 +45,14 @@ education:
   logo: /assets/images/badges/PKU_red.png
   position: 博士
   date: 2012.09 - 2018.06
-  - name: 中国科学院地理科学与资源研究所 资源与环境信息系统国家重点实验室
+  - name: 美国加州大学圣巴巴拉分校（UCSB）
   logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: 2020.12 - present
-  - name: 中国科学院地理科学与资源研究所 资源与环境信息系统国家重点实验室
+  position: 联合培养
+  date: 2016.10 - 2017.10
+  - name: 中国地质大学（北京）
   logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: 2020.12 - present
+  position: 学士
+  date: 2008.09 - 2012.06
 
 
 # experience:

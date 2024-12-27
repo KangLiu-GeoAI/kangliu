@@ -33,6 +33,10 @@ portrait_caption: >-
   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:  
+- name: 中国科学院深圳先进技术研究院
+  logo: /assets/images/badges/PKU_red.png
+  position: 副研究员
+  date: 2020.12 - 至今
 - name: Peking University
   logo: /assets/images/badges/PKU_red.png
   position: B.S. in Computer Science

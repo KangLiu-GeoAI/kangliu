@@ -5,7 +5,7 @@
                 {% if site.data.profile.education %}
                 <div class="row text-center justify-content-center">
                     {% for item in site.data.profile.education limit:5 %}
-                    <div class="col-2 d-flex flex-column align-items-center mb-3 px-2">
+                    <div class="col-2 d-flex flex-column align-items-center px-3">
                         <div>
                             <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 80%;" class="mb-2">
                             <div>

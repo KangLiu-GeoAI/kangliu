@@ -32,29 +32,7 @@ portrait_url: /assets/images/photos/portrait_kangliu.jpg
 portrait_caption: >-
   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
-education:
-- name: 中国科学院深圳先进技术研究院
-  logo: /assets/images/badges/PKU_red.png
-  position: 副研究员
-  date: 2020.12 - 至今
-  
-- name: 中国科学院深圳先进技术研究院
-  logo: /assets/images/badges/PKU_red.png
-  position: 博士后、副研究员
-  date: 2018.07 - 2020.12
-
-  - name: 中国科学院地理科学与资源研究所 资源与环境信息系统国家重点实验室
-  logo: /assets/images/badges/PKU_red.png
-  position: 博士
-  date: 2012.09 - 2018.06
-  
-- name: 中国科学院地理科学与资源研究所 资源与环境信息系统国家重点实验室
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: 2020.12 - present
-  
+education:  
 - name: Peking University
   logo: /assets/images/badges/PKU_red.png
   position: B.S. in Computer Science

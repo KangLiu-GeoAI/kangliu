@@ -3,9 +3,9 @@
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 {% if site.data.profile.education %}
-                <div class="row text-center justify-content-center">
+                <div class="row text-center justify-content-between">
                     {% for item in site.data.profile.education limit:5 %}
-                    <div class="col-2 d-flex flex-column align-items-center px-5">
+                    <div class="col-2 d-flex flex-column align-items-center">
                         <div>
                             <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 80%;" class="mb-2">
                             <div>

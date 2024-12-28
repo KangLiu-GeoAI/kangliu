@@ -9,13 +9,13 @@
                 {% for paper in papers %}
                 {% assign lines = paper.content | split: "\n" %}
                 {% for line in lines %}
-                {% unless line contains "|" or line contains "---" %}
+                {% if line contains "|" and line contains "1" %} <!-- 检查是否为数据行 -->
                 {% assign cells = line | split: "|" %}
                 <tr>
                     <td class="text-center" style="width: 5%;">{{ cells[1] | strip }}</td> <!-- 提取序号 -->
                     <td style="width: 95%;">{{ cells[2] | strip }}</td> <!-- 提取论文内容 -->
                 </tr>
-                {% endunless %}
+                {% endif %}
                 {% endfor %}
                 {% endfor %}
             </tbody>

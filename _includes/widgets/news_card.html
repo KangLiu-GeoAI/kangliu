@@ -1,22 +1,21 @@
-{% assign news = site.news %}
-
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-book"></i> 部分发表论文
+        <i class="fas fa-rss"></i> News
     </h6>
     <div class="px-3 pb-1">
-        <table class="table table-bordered table-striped">
-            <tbody>
-                {% assign lines = site.news | where: "path", "_news/papers.md" | first.content | split: "\n" %}
-                {% for line in lines %}
-                {% assign columns = line | split: "|" %}
-                {% unless columns[0] == "" or columns[1] == "" or columns[2] == "" %}
-                <tr>
-                    <td>{{ columns[2] | strip }}</td>
-                </tr>
-                {% endunless %}
-                {% endfor %}
-            </tbody>
-        </table>
+        <!-- 遍历所有 news 集合 -->
+        {% assign news = site.news %}
+        {% for item in news %}
+        <div class="media py-1 border-bottom border-gray">
+            <div class="media-body">
+                <div class="my-1 d-flex">
+                    <!-- 显示 ID -->
+                    <div>ID: {{ item.id }}</div>
+                    <!-- 显示标题 -->
+                    <div class="ml-auto">{{ item.title }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>

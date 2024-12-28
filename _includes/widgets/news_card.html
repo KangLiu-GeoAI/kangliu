@@ -4,18 +4,23 @@
     </h6>
     <div class="px-3 pb-1">
         <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>论文内容</th>
+                </tr>
+            </thead>
             <tbody>
                 {% assign papers = site.news | where: "title", "发表论文" %}
                 {% for paper in papers %}
-                {% assign lines = paper.content | split: "\n" %}
-                {% for line in lines %}
-                {% if line contains "|" and line contains "1" %} <!-- 检查是否为数据行 -->
-                {% assign cells = line | split: "|" %}
+                {% for line in paper.content | split: "\n" %}
+                {% assign columns = line | split: "|" %}
+                {% unless line == "" or forloop.index0 == 0 %}
                 <tr>
-                    <td class="text-center" style="width: 5%;">{{ cells[1] | strip }}</td> <!-- 提取序号 -->
-                    <td style="width: 95%;">{{ cells[2] | strip }}</td> <!-- 提取论文内容 -->
+                    <td>{{ columns[1] }}</td>
+                    <td>{{ columns[2] }}</td>
                 </tr>
-                {% endif %}
+                {% endunless %}
                 {% endfor %}
                 {% endfor %}
             </tbody>

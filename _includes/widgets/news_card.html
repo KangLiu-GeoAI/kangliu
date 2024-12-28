@@ -4,12 +4,6 @@
     </h6>
     <div class="px-3 pb-1">
         <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>序号</th>
-                    <th>论文内容</th>
-                </tr>
-            </thead>
             <tbody>
                 {% assign papers = site.news | where: "title", "发表论文" %}
                 {% for paper in papers %}
@@ -18,7 +12,6 @@
                 {% assign columns = line | split: "|" %}
                 {% unless columns[1] == "" or columns[2] == "" %}
                 <tr>
-                    <td>{{ columns[1] | strip }}</td>
                     <td>{{ columns[2] | strip }}</td>
                 </tr>
                 {% endunless %}

@@ -1,7 +1,7 @@
 ---
 title:          "Act2Loc：耦合机器学习与机理模型的轨迹生成"
 date:           2024-05-12 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "International Journal of Geographical Information Science (IJGIS)"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'

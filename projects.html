@@ -5,7 +5,7 @@ navbar_title: Projects
 ---
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-book"></i> 主持项目（国家级）
+        <i class="fas fa-book"></i> 发表论文
     </h6>
     <div class="px-3 pb-1">
         <style>
@@ -19,7 +19,7 @@ navbar_title: Projects
             }
         </style>
         <ul class="list-unstyled">
-            {% assign papers = site.data.projects_zhuchi_guojia %}
+            {% assign papers = site.data.papers %}
             {% for paper in papers %}
             <li>
                 <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}

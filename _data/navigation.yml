@@ -5,7 +5,7 @@ pages:
   url: /
 - name: 发表论文
   url: /news
-- name: Publications
+- name: 研究和项目
   url: /publications
 - name: Showcase
   url: /showcase

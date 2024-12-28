@@ -3,9 +3,15 @@
         <i class="fas fa-book"></i> 部分发表论文
     </h6>
     <div class="px-3 pb-1">
-        <!-- 加载 papers.md 的内容 -->
-        {% assign paper_content = site.news | where: "title", "发表论文" | first.content %}
+        <style>
+            .paper-text p {
+                margin-bottom: 3px; /* 缩小段落间距 */
+                line-height: 1.1;   /* 调整行高 */
+            }
+        </style>
+        <!-- 加载 papers.md 的内容 -->        
         <div class="paper-text">
+            {% assign paper_content = site.news | where: "title", "发表论文" | first.content %}
             {{ paper_content | markdownify }}
         </div>
     </div>

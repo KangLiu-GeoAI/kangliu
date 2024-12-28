@@ -1,23 +1,30 @@
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-rss"></i> 部分发表论文
+        <i class="fas fa-book"></i> 部分发表论文
     </h6>
     <div class="px-3 pb-1">
-        <ul class="list-unstyled">
-            {% assign papers = site.news | where: "title", "发表论文" %}
-            {% assign counter = 0 %} <!-- 初始化计数器 -->
-            {% for paper in papers %}
-            {% for line in paper.content | split: "\n" %}
-            {% unless line == "" %}
-            {% assign counter = counter | plus: 1 %} <!-- 每次循环计数器加 1 -->
-            <li class="media py-1 border-bottom border-gray" style="margin-bottom: 3px;">
-                <div class="media-body" style="margin-bottom: 0;">
-                    <div>{{ counter }}. {{ line }}</div> <!-- 使用手动计数器生成编号 -->
-                </div>
-            </li>
-            {% endunless %}
-            {% endfor %}
-            {% endfor %}
-        </ul>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">序号</th>
+                    <th style="width: 95%;">论文内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign papers = site.news | where: "title", "发表论文" %}
+                {% assign counter = 0 %} <!-- 初始化计数器 -->
+                {% for paper in papers %}
+                {% for line in paper.content | split: "\n" %}
+                {% unless line == "" %}
+                {% assign counter = counter | plus: 1 %} <!-- 每次循环计数器加 1 -->
+                <tr>
+                    <td>{{ counter }}</td>
+                    <td>{{ line }}</td>
+                </tr>
+                {% endunless %}
+                {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>

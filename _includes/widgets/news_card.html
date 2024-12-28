@@ -1,21 +1,16 @@
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-rss"></i> News
+        <i class="fas fa-book"></i> 部分发表论文
     </h6>
     <div class="px-3 pb-1">
-        <!-- 遍历所有 news 集合 -->
-        {% assign news = site.news %}
-        {% for item in news %}
-        <div class="media py-1 border-bottom border-gray">
-            <div class="media-body">
-                <div class="my-1 d-flex">
-                    <!-- 显示 ID -->
-                    <div>ID: {{ item.id }}</div>
-                    <!-- 显示标题 -->
-                    <div class="ml-auto">{{ item.title }}</div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        <ul class="list-unstyled">
+            <!-- 遍历 papers 集合 -->
+            {% assign papers = site.news | where: "title", "发表论文" | first.papers %}
+            {% for paper in papers %}
+            <li class="mb-2">
+                <span class="font-weight-bold">[{{ paper.id }}]</span> {{ paper.title }}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </div>

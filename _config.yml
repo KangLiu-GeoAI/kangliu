@@ -41,4 +41,6 @@ collections:
     output: true
   showcase:
     output: true
+  projects:
+    output: true
 

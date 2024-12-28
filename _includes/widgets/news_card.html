@@ -6,11 +6,10 @@
     <div class="px-3 pb-1">
         <style>
             .paper-text p {
-                margin-top: 5px; /* 缩小段落间距 */
+                margin-top: 5px; /* 段落间距 */
                 line-height: 1.5;   /* 调整行高 */
             }
         </style>
-        <!-- 加载 papers.md 的内容 -->        
         <ul class="list-unstyled">
             {% assign papers = site.news | where: "title", "发表论文" | first.papers %}
             {% for paper in papers %}
@@ -21,4 +20,3 @@
         </ul>
     </div>
 </div>
-<a href="{{ 'news' | relative_url }}">(view all <i class="fas fa-angle-double-right"></i>)</a>

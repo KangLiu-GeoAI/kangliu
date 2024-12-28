@@ -16,7 +16,8 @@
         </style>
         <ul class="list-unstyled">
             {% assign papers = site.data.papers %}
-            {% for paper in papers limit:10 %}    /*限制展示条数*/
+<!--             限制展示条数 -->
+            {% for paper in papers limit:10 %}
             <li>
                 <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
             </li>

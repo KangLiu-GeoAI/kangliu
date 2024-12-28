@@ -3,6 +3,7 @@ title: "发表论文"
 layout: null
 ---
 
+| 序号 | 论文内容                                                                                     |
 |------|---------------------------------------------------------------------------------------------|
 | 1    | 尹凌, 刘康, 梅树江, 等. 呼吸道传染病时空传播风险精细化评估系统构建与应用[J]. 中国卫生信息管理杂志, 2024, 21(05): 653-660. |
 | 2    | Liu K#, Wang F#, He B*, et al., Revisiting the topology of urban road networks with graph embeddings[C]. 2023 China Automation Congress (CAC). IEEE, 2024: XX-XX. |

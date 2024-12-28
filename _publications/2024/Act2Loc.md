@@ -14,8 +14,10 @@ cover:          /assets/images/covers/Act2Loc.png
 authors:
   - Kang Liu*<sup>#</sup>
   - Xin Jin<sup>#</sup>
-  - Some Other Name
-  - John Doe
+  - Shifen Cheng
+  - Song Gao
+  - Ling Yin
+  - Feng Lu
 links:
   Paper: https://www.tandfonline.com/doi/abs/10.1080/13658816.2023.2292570
 ---

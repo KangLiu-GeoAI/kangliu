@@ -10,7 +10,8 @@
                 {% assign lines = paper.content | split: "\n" %}
                 {% for line in lines %}
                 {% assign columns = line | split: "|" %}
-                {% unless columns[1] == "" or columns[2] == "" %}
+                <!-- 确保过滤掉标题行 -->
+                {% unless columns[1] == " 序号 " or columns[2] == " 论文内容 " or columns[1] == "" or columns[2] == "" %}
                 <tr>
                     <td>{{ columns[2] | strip }}</td>
                 </tr>

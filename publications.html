@@ -9,11 +9,11 @@ body_attr: >-
 {% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="my-3 bg-white shadow-sm rounded-sm">
-    <div class="col-12 col-lg-10">
+    <div class="px-3 pb-1">
         <!-- 遍历所有 publications 集合 -->
         {% assign publications = site.publications %}
         {% for publication in publications %}
-        <div class="my-3 p-3 bg-white shadow-sm rounded-sm">
+        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
             <div class="d-flex flex-column p-3">
                 <h5 class="font-weight-normal">{{ publication.title }}</h5>
                 <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>

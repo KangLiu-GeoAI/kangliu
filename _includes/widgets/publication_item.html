@@ -16,7 +16,7 @@
                 {% endfor %}
             </p>
             {%- if item.cover -%}
-            <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" style="width: 50%; height: auto; display: block; margin: 0 auto;" class="lazy rounded-sm image-half-width" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+            <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy rounded-sm image-half-width" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
             {%- else -%}
             <svg class="bubble-visual-hash lazy rounded-sm image-half-width" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
             {%- endif -%}

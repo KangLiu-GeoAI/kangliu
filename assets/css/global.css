@@ -68,7 +68,7 @@ div.lazy {
 }
 
 .paper-text p {
-    margin-bottom: 5px; /* 调整段落之间的间距 */
+    margin-bottom: 3px; /* 调整段落之间的间距 */
     line-height: 1.4;   /* 调整行高 */
 }
 

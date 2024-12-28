@@ -13,12 +13,13 @@
             <tbody>
                 {% assign papers = site.news | where: "title", "发表论文" %}
                 {% for paper in papers %}
-                {% for line in paper.content | split: "\n" %}
+                {% assign lines = paper.content | split: "\n" %}
+                {% for line in lines %}
                 {% assign columns = line | split: "|" %}
-                {% unless line == "" or forloop.index0 == 0 %}
+                {% unless columns[1] == "" or columns[2] == "" %}
                 <tr>
-                    <td>{{ columns[1] }}</td>
-                    <td>{{ columns[2] }}</td>
+                    <td>{{ columns[1] | strip }}</td>
+                    <td>{{ columns[2] | strip }}</td>
                 </tr>
                 {% endunless %}
                 {% endfor %}

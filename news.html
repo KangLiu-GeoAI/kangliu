@@ -3,3 +3,18 @@ layout: default
 title : News
 navbar_title: News
 ---
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <h6 class="p-3 mb-0 border-bottom border-gray">
+        <i class="fas fa-book"></i> 全部发表论文
+    </h6>
+    <div class="px-3 pb-1">
+        <ul class="list-unstyled">
+            {% assign papers = site.data.papers %}
+            {% for paper in papers %}
+            <li class="mb-2">
+                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

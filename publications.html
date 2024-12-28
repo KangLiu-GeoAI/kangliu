@@ -19,14 +19,14 @@ body_attr: >-
                 <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
                 <p class="small mb-2">{{ publication.pub }} ({{ publication.pub_date }})</p>
                 {% if publication.abstract %}
-                <p class="small text-muted" style="font-size: 15px">{{ publication.abstract }}</p>
-                {% endif %}
+                <p class="small abstract-text" style="font-size: 15px; color: black;">{{ publication.abstract }}</p>
                 {% if publication.links %}
-                <p class="small">
                     {% for link in publication.links %}
-                    <a href="{{ link[1] }}" target="_blank">[{{ link[0] }}]</a>
+                    {% if link[0] == "Paper" %}
+                    <p class="small"><a href="{{ link[1] }}" target="_blank">[{{ link[0] }}]</a></p>
+                    {% endif %}
                     {% endfor %}
-                </p>
+                {% endif %}
                 {% endif %}
                 {% if publication.cover %}
                 <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2" style="max-width: 50%;">

@@ -19,7 +19,7 @@ navbar_title: Projects
             }
         </style>
         <ul class="list-unstyled">
-            {% assign papers = site.data.papers %}
+            {% assign papers = site.data.projects_zhuchi_guojia %}
             {% for paper in papers %}
             <li>
                 <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}

@@ -1,4 +1,8 @@
 ---
+layout: null
+---
+
+---
 title: "所有发表的论文"
 publications:
   - title: "Lorem ipsum: Dolor sit amet, consectetur adipiscing elit"

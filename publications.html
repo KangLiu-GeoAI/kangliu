@@ -8,7 +8,7 @@ body_attr: >-
 
 {% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="row">
+<div class="my-3 bg-white shadow-sm rounded-sm">
     <div class="col-12 col-lg-10">
         <!-- 遍历所有 publications 集合 -->
         {% assign publications = site.publications %}

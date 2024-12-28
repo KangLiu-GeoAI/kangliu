@@ -4,6 +4,14 @@ title : Projects
 navbar_title: Projects
 ---
 <div class="my-3 bg-white shadow-sm rounded-sm">
+    <style>
+        .custom-hr {
+            border: none;
+            border-top: 1px solid #ddd; /* 分割线样式 */
+            width: 100%; /* 分割线与父级宽度一致 */
+            margin: 6px 0; /* 调整分割线上下间距 */
+        }
+    </style>
     <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fas fa-gears"></i> 主持项目（国家级）
     </h6>
@@ -17,12 +25,6 @@ navbar_title: Projects
             .list-unstyled li span {
                 margin-right: 8px; /* 调整编号与内容的间距 */
             }
-            .custom-hr {
-                border: none;
-                border-top: 1px solid #ddd; /* 分割线样式 */
-                width: 100%; /* 分割线与父级宽度一致 */
-                margin: 6px 0; /* 调整分割线上下间距 */
-            }
         </style>
         <ul class="list-unstyled">
             {% assign papers = site.data.projects_zhuchi_guojia %}
@@ -32,10 +34,9 @@ navbar_title: Projects
             </li>
             {% endfor %}
         </ul>
-        <!-- 添加分割线 -->
-        <hr class="custom-hr">
     </div>
-    
+    <!-- 分割线 -->
+    <hr class="custom-hr">
     <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fas fa-gears"></i> 主持项目（省部级）
     </h6>

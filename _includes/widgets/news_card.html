@@ -1,14 +1,11 @@
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fas fa-book"></i> 部分发表论文
-        <a href="{{ 'news' | relative_url }}">(view all <i class="fas fa-angle-double-right"></i>)</a>
     </h6>
     <div class="px-3 pb-1">
         <table class="table table-bordered table-striped">
             <tbody>
-                {% assign papers = site.news | where: "title", "发表论文" %}
-                {% for paper in papers %}
-                {% assign lines = paper.content | split: "\n" %}
+                {% assign lines = site.news | where: "path", "/news/papers.md" | first.content | split: "\n" %}
                 {% for line in lines %}
                 {% assign columns = line | split: "|" %}
                 <!-- 确保过滤掉标题行 -->
@@ -17,7 +14,6 @@
                     <td>{{ columns[2] | strip }}</td>
                 </tr>
                 {% endunless %}
-                {% endfor %}
                 {% endfor %}
             </tbody>
         </table>

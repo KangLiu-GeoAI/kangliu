@@ -3,14 +3,10 @@
         <i class="fas fa-book"></i> 部分发表论文
     </h6>
     <div class="px-3 pb-1">
-        <ul class="list-unstyled">
-            <!-- 遍历 papers 集合 -->
-            {% assign papers = site.news | where: "title", "发表论文" | first.papers %}
-            {% for paper in papers %}
-            <li class="mb-2">
-                <span class="font-weight-bold">[{{ paper.id }}]</span> {{ paper.title }}
-            </li>
-            {% endfor %}
-        </ul>
+        <!-- 加载 papers.md 的内容 -->
+        {% assign paper_content = site.news | where: "title", "发表论文" | first.content %}
+        <div class="paper-text">
+            {{ paper_content | markdownify }}
+        </div>
     </div>
 </div>

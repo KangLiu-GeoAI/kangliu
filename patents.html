@@ -27,7 +27,7 @@ navbar_title: Patents
             }
         </style>
         <ul class="list-unstyled">
-            {% assign papers = site.data.patent_shouquan %}
+            {% assign papers = site.data.patents_shouquan %}
             {% for paper in papers %}
             <li>
                 <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
@@ -52,7 +52,7 @@ navbar_title: Patents
             }
         </style>
         <ul class="list-unstyled">
-            {% assign papers = site.data.projects_zhuchi_shengbu %}
+            {% assign papers = site.data.patents_shenqing %}
             {% for paper in papers %}
             <li>
                 <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}

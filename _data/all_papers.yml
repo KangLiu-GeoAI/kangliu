@@ -17,8 +17,8 @@
 - content: "Zhang, H., Yin, L., Mao, L., Mei, S., Chen, T., <u><b>Liu K.</b></u>, & Feng, S. Combinational recommendation of vaccinations, mask-wearing, and home-quarantine to control influenza in megacities: An agent-based modeling study with large-scale trajectory data[J]. _Frontiers in Public Health_, 2022, 10: 883624. <a href='https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2022.883624/full' target='_blank'>[paper]</a>" 
 - content: "He B, Hu J, <u><b>Liu K</b></u>*, Xue J, Ning L, Fan J. Exploring Park Visit Variability Using Cell Phone Data in Shenzhen, China[J]. _Remote Sensing_, 2022, 14(3): 499. <a href='https://www.mdpi.com/2072-4292/14/3/499' target='_blank'>[paper]</a>" 
 - content: "Xi G, Yin L, <u><b>Liu K</b></u>. Intra-urban Region-based Traffic Flow Prediction Based on Spatial-Temporal Graph Convolutional Network Enhanced by Spatial Context[C]. _The 10th International Workshop on Urban Computing (UrbComp 2021), held in conjunction with the 29th ACM SIGSPATIAL_, 2021. (<b>Best Paper Award</b>) <a href='http://urban-computing.com/urbcomp2021/file/UrbComp2021_Full_Xi.pdf' target='_blank'>[paper]</a>" 
-- content: "尹凌，<b><u>刘康</b></u>，张浩等. 耦合人群移动的COVID-19传染病模型研究进展[J]. _地球信息科学学报_, 2021, 23(11): 1894-1909." 
-- content: "张浩, 尹凌, <b><u>刘康</b></u>等. 深圳市快速抑制COVID-19疫情的非药物干预措施效果评估：基于智能体的建模研究[J]. _地球信息科学学报_, 2021, 23(11): 1936-1945. <a href='https://www.dqxxkx.cn/CN/10.12082/dqxxkx.2021.210090' target='_blank'>[paper]</a>" 
+- content: "尹凌，<u><b>刘康</b></u>，张浩等. 耦合人群移动的COVID-19传染病模型研究进展[J]. _地球信息科学学报_, 2021, 23(11): 1894-1909." 
+- content: "张浩, 尹凌, <u><b>刘康</b></u>等. 深圳市快速抑制COVID-19疫情的非药物干预措施效果评估：基于智能体的建模研究[J]. _地球信息科学学报_, 2021, 23(11): 1936-1945. <a href='https://www.dqxxkx.cn/CN/10.12082/dqxxkx.2021.210090' target='_blank'>[paper]</a>" 
 - content: "He B, <u><b>Liu K</b></u>*, Xue Z, et al. Spatial and Temporal Characteristics of Urban Tourism Travel by Taxi—A Case Study of Shenzhen[J]. _ISPRS International Journal of Geo-Information_, 2021, 10(7): 445. <a href='https://www.mdpi.com/2220-9964/10/7/445' target='_blank'>[paper]</a>" 
 - content: "Yin L, Zhang H, Li Y, <u><b>Liu K</b></u>, et al. A data driven agent-based model that recommends non-pharmaceutical interventions to suppress Coronavirus disease 2019 resurgence in megacities. _Journal of the Royal Society Interface_, 2021, 18(181): 20210112. <a href='https://royalsocietypublishing.org/doi/full/10.1098/rsif.2021.0112' target='_blank'>[paper]</a>" 
 - content: "Li M, Gao S, Lu F, <u><b>Liu K</b></u>, et al. Prediction of human activity intensity using the interactions in physical and social spaces through graph convolutional networks[J]. _International Journal of Geographical Information Science_, 2021, 35:12, 2489-2516. <a href='https://www.tandfonline.com/doi/abs/10.1080/13658816.2021.1912347' target='_blank'>[paper]</a>" 
@@ -46,9 +46,22 @@
 - content: "<u><b>刘康</b></u>, 王枫, 翟旭. 全球电离层TEC数据统计分析与全局趋势分析[J]. _测绘通报_, 2013 (1): 29-32. <a href='https://kns.cnki.net/kcms2/article/abstract?v=rdiHbV4QUxYHwfW5tesBDpC4_9Li8mlbLrWOHsMCGuI-auamJWBVy8PeO9o-owgc0tRcYV-q5pGXAEPFtbKOpa5mTH8sr6Bv-Qr7yFWLKcCMPECVHrbaWnIgpT-O4RnLrzOfClJrLgORXpZKZuC4NZQmQnQfYQPv4zzxSyIA9B73kS-uvxGyyhssBpu3MnKt&uniplatform=NZKPT&language=CHS' target='_blank'>[paper]</a>"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 # 加粗：<b></b>
 # 下划线：<u></u>
-# 上标：<sup></sup>
+# 上标：<sup>#</sup>
 # 斜体：_XX_
 # 超链接：<a href='https://example.com' target='_blank'>[paper]</a>
 # <u><b>Liu K</b></u>
+# <u><b>Liu K.</b></u>

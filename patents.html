@@ -13,31 +13,6 @@ navbar_title: Patents
         }
     </style>
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-gears"></i> 主持项目（国家级）
-    </h6>
-    <div class="px-3 pb-0">
-        <style>
-            .list-unstyled li {
-                display: flex; /* 使用flex布局，使内容在一行显示 */
-                align-items: flex-start; /* 对齐顶部 */
-                margin-top: 5px; /* 调整每行之间的间距 */
-            }
-            .list-unstyled li span {
-                margin-right: 8px; /* 调整编号与内容的间距 */
-            }
-        </style>
-        <ul class="list-unstyled">
-            {% assign papers = site.data.projects_zhuchi_guojia %}
-            {% for paper in papers %}
-            <li>
-                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <!-- 分割线 -->
-    <hr class="custom-hr">
-    <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fas fa-gears"></i> 发明专利（已授权）
     </h6>
     <div class="px-3 pb-0">

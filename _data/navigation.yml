@@ -7,5 +7,7 @@ pages:
   url: /news
 - name: 科研项目
   url: /projects
+- name: 专利软著
+  url: /patents
 - name: 研究和项目
   url: /publications

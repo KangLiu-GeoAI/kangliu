@@ -11,6 +11,21 @@ navbar_title: Recruit
             width: 100%; /* 分割线与父级宽度一致 */
             margin: 6px 0; /* 调整分割线上下间距 */
         }
+        .recruit-section h6 {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .recruit-section ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .recruit-section ul li {
+            margin-bottom: 5px;
+            line-height: 1.6; /* 调整行间距 */
+        }
+        .recruit-section ul li ul {
+            padding-left: 20px; /* 子列表缩进 */
+        }
     </style>
     <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fa-solid fa-flask"></i> 研究生招生信息
@@ -40,37 +55,31 @@ navbar_title: Recruit
 
     <!-- 博士后招聘信息标题 -->
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fa-solid fa-flask"></i> 博士后招聘信息
+        <i class="fas fa-briefcase"></i> 博士后招聘信息
     </h6>
-    <div class="px-3 pb-0">
-        <style>
-            .list-unstyled li {
-                display: flex; /* 使用flex布局，使内容在一行显示 */
-                align-items: flex-start; /* 对齐顶部 */
-                margin-top: 5px; /* 调整每行之间的间距 */
-            }
-            .list-unstyled li span {
-                margin-right: 8px; /* 调整编号与内容的间距 */
-            }
-            .recruit-section h6 {
-                font-weight: bold; /* 一级标题加粗 */
-                margin-top: 10px;
-            }
-            .recruit-section ul {
-                margin-top: 5px;
-                padding-left: 20px; /* 列表缩进 */
-            }
-            .recruit-section ul li {
-                margin-bottom: 5px; /* 列表项之间的间距 */
-            }
-        </style>
-        <ul class="recruit-section">
-            {% assign papers = site.data.recruit_post %}
-            {% for paper in papers %}
-            <li>
-                {{ paper.content | markdownify }}
-            </li>
+    <div class="px-3 pb-0 recruit-section">
+        {% assign recruit_posts = site.data.recruit_post %}
+        {% for post in recruit_posts %}
+        <!-- 一级标题 -->
+        <h6>{{ post.title }}</h6>
+        <ul>
+            {% for item in post.content %}
+                {% if item contains "- " %}
+                <!-- 子列表 -->
+                <li>
+                    {{ item | split: " - " | first | markdownify }}
+                    <ul>
+                        {% assign sub_items = item | split: " - " | last | split: ";" %}
+                        {% for sub_item in sub_items %}
+                        <li>{{ sub_item | strip }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li>{{ item }}</li>
+                {% endif %}
             {% endfor %}
         </ul>
+        {% endfor %}
     </div>
 </div>

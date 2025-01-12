@@ -58,6 +58,29 @@ navbar_title: Recruit
         <i class="fas fa-briefcase"></i> 博士后招聘信息
     </h6>
     <div class="px-3 pb-0 recruit-section">
+        <style>
+            .custom-hr {
+                border: none;
+                border-top: 1px solid #ddd; /* 分割线样式 */
+                width: 100%; /* 分割线与父级宽度一致 */
+                margin: 6px 0; /* 调整分割线上下间距 */
+            }
+            .recruit-section h6 {
+                font-weight: bold;
+                margin-top: 15px;
+            }
+            .recruit-section ul {
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+            .recruit-section ul li {
+                margin-bottom: 5px;
+                line-height: 1.6; /* 调整行间距 */
+            }
+            .recruit-section ul li ul {
+                padding-left: 20px; /* 子列表缩进 */
+            }
+        </style>
         {% assign recruit_posts = site.data.recruit_post %}
         {% for post in recruit_posts %}
         <!-- 一级标题 -->

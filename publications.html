@@ -17,7 +17,7 @@ body_attr: >-
             <div class="d-flex flex-column p-3">
                 <h5 class="font-weight-normal">{{ publication.title }}</h5>
                 <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
-                <p class="small mb-2">{{ publication.pub }} ({{ publication.pub_date }})</p>
+                <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
                 {% if publication.abstract %}
                 <p class="small abstract-text" style="font-size: 15px; color: black;">
                     {{ publication.abstract }}

@@ -11,6 +11,17 @@ navbar_title: Recruit
             width: 100%; /* 分割线与父级宽度一致 */
             margin: 6px 0; /* 调整分割线上下间距 */
         }
+        .recruit-section h6 {
+            font-weight: bold; /* 一级标题加粗 */
+            margin-top: 15px;
+        }
+        .recruit-section ul {
+            margin-top: 10px;
+            padding-left: 20px; /* 列表缩进 */
+        }
+        .recruit-section ul li {
+            margin-bottom: 5px; /* 列表项之间的间距 */
+        }
     </style>
     <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fa-solid fa-flask"></i> 研究生招生信息
@@ -40,7 +51,7 @@ navbar_title: Recruit
 
     <!-- 博士后招聘信息 -->
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-briefcase"></i> 博士后招聘信息
+        <i class="fa-solid fa-flask"></i> 博士后招聘信息
     </h6>
     <div class="px-3 pb-0 recruit-section">
         {% assign recruit_posts = site.data.recruit_post %}

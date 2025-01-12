@@ -11,21 +11,6 @@ navbar_title: Recruit
             width: 100%; /* 分割线与父级宽度一致 */
             margin: 6px 0; /* 调整分割线上下间距 */
         }
-        .recruit-section h6 {
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .recruit-section ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-        .recruit-section ul li {
-            margin-bottom: 5px;
-            line-height: 1.6; /* 调整行间距 */
-        }
-        .recruit-section ul li ul {
-            padding-left: 20px; /* 子列表缩进 */
-        }
     </style>
     <h6 class="p-3 mb-0 border-bottom border-gray">
         <i class="fa-solid fa-flask"></i> 研究生招生信息
@@ -52,57 +37,40 @@ navbar_title: Recruit
     </div>
     <!-- 分割线 -->
     <hr class="custom-hr">
-
-    <!-- 博士后招聘信息标题 -->
     <h6 class="p-3 mb-0 border-bottom border-gray">
-        <i class="fas fa-briefcase"></i> 博士后招聘信息
+        <i class="fa-solid fa-briefcase"></i> 博士后招聘信息
     </h6>
-    <div class="px-3 pb-0 recruit-section">
-        <style>
-            .custom-hr {
-                border: none;
-                border-top: 1px solid #ddd; /* 分割线样式 */
-                width: 100%; /* 分割线与父级宽度一致 */
-                margin: 6px 0; /* 调整分割线上下间距 */
-            }
-            .recruit-section h6 {
-                font-weight: bold;
-                margin-top: 15px;
-            }
-            .recruit-section ul {
-                margin-top: 10px;
-                padding-left: 20px;
-            }
-            .recruit-section ul li {
-                margin-bottom: 5px;
-                line-height: 1.6; /* 调整行间距 */
-            }
-            .recruit-section ul li ul {
-                padding-left: 20px; /* 子列表缩进 */
-            }
-        </style>
-        {% assign recruit_posts = site.data.recruit_post %}
-        {% for post in recruit_posts %}
-        <!-- 一级标题 -->
-        <h6>{{ post.title }}</h6>
-        <ul>
-            {% for item in post.content %}
-                {% if item contains "- " %}
-                <!-- 子列表 -->
-                <li>
-                    {{ item | split: " - " | first | markdownify }}
-                    <ul>
-                        {% assign sub_items = item | split: " - " | last | split: ";" %}
-                        {% for sub_item in sub_items %}
-                        <li>{{ sub_item | strip }}</li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% else %}
-                <li>{{ item }}</li>
-                {% endif %}
-            {% endfor %}
+    <div class="px-3 pb-0">
+        <!-- 第一部分：应聘要求 -->
+        <h6>应聘要求</h6>
+        <ul class="list-unstyled">
+            <li>已获得或即将获得计算机、数学、GIS、数据科学、统计学、软件工程等专业博士学位，年龄不超过35周岁；</li>
+            <li>较好的编程能力和算法功底；</li>
+            <li>发表高质量论文2篇及以上；</li>
+            <li>具备独立科研能力，熟练掌握相关领域的理论或方法，对研究有热情、动手能力强，并具备英文交流与写作的能力。</li>
         </ul>
-        {% endfor %}
+
+        <!-- 第二部分：薪资福利 -->
+        <h6>薪资福利</h6>
+        <ul class="list-unstyled">
+            <li>博士后期间综合年收入不少于32万元，其中包括：
+                <ul>
+                    <li>广东省15万/年生活补贴；</li>
+                    <li>深圳市6万/年博士后生活补贴（需开题和中期考核合格）；</li>
+                    <li>合作导师具有丰富经验，可协助申请以下项目：
+                        <ul>
+                            <li>中国博士后科学基金（特别18万/一等12万/二等8万）；</li>
+                            <li>国家自然科学基金青年项目（30万）；</li>
+                            <li>中科院特别研究助理资助项目（80万）；</li>
+                            <li>先进院优秀青年创新基金（10万）；</li>
+                            <li>其他奖项基金若干（总额10-20万）。</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>在站工作期间出站优秀者可优先推荐至高职岗位。</li>
+            <li>可选择落户深圳市，其配偶及未成年子女可办理随迁手续。</li>
+            <li>符合条件者，可竞争住博项目“博士后创新人才支持计划”（总额40万/3年）。</li>
+        </ul>
     </div>
 </div>

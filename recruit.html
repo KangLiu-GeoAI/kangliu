@@ -30,7 +30,7 @@ navbar_title: Recruit
             {% assign papers = site.data.recruit_stu %}
             {% for paper in papers %}
             <li>
-                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
+                {{ paper.content | markdownify }}
             </li>
             {% endfor %}
         </ul>

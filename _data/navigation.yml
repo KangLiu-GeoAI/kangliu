@@ -9,5 +9,7 @@ pages:
   url: /projects
 - name: 专利软著
   url: /patents
+- name: 会议报告
+  url: /reports
 - name: 研究和项目
   url: /publications

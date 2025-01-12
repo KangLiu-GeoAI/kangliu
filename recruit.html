@@ -35,4 +35,37 @@ navbar_title: Recruit
             {% endfor %}
         </ul>
     </div>
+    <!-- 分割线 -->
+    <hr class="custom-hr">
+
+    <!-- 博士后招聘信息 -->
+    <h6 class="p-3 mb-0 border-bottom border-gray">
+        <i class="fas fa-briefcase"></i> 博士后招聘信息
+    </h6>
+    <div class="px-3 pb-0 recruit-section">
+        {% assign recruit_posts = site.data.recruit_post %}
+        {% for post in recruit_posts %}
+        <!-- 一级标题 -->
+        <h6>{{ post.title }}</h6>
+        <ul>
+            {% for item in post.content %}
+                <!-- 检查是否为嵌套子列表 -->
+                {% if item contains '- ' %}
+                <li>
+                    {{ item | markdownify }}
+                    <ul>
+                        {% assign sub_items = item | split: ' - ' | last | split: ';' %}
+                        {% for sub_item in sub_items %}
+                        <li>{{ sub_item | strip }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li>{{ item | markdownify }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <hr class="custom-hr">
+        {% endfor %}
+    </div>
 </div>

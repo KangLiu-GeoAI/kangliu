@@ -1,0 +1,63 @@
+---
+layout: default
+title : Recruit
+navbar_title: Recruit
+---
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <style>
+        .custom-hr {
+            border: none;
+            border-top: 1px solid #ddd; /* 分割线样式 */
+            width: 100%; /* 分割线与父级宽度一致 */
+            margin: 6px 0; /* 调整分割线上下间距 */
+        }
+    </style>
+    <h6 class="p-3 mb-0 border-bottom border-gray">
+        <i class="fa-solid fa-award"></i> 学术任职
+    </h6>
+    <div class="px-3 pb-0">
+        <style>
+            .list-unstyled li {
+                display: flex; /* 使用flex布局，使内容在一行显示 */
+                align-items: flex-start; /* 对齐顶部 */
+                margin-top: 5px; /* 调整每行之间的间距 */
+            }
+            .list-unstyled li span {
+                margin-right: 8px; /* 调整编号与内容的间距 */
+            }
+        </style>
+        <ul class="list-unstyled">
+            {% assign papers = site.data.renzhi %}
+            {% for paper in papers %}
+            <li>
+                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+   <!-- 分割线 -->
+    <hr class="custom-hr">
+    <h6 class="p-3 mb-0 border-bottom border-gray">
+        <i class="fa-solid fa-award"></i> 奖励荣誉
+    </h6>
+    <div class="px-3 pb-0">
+        <style>
+            .list-unstyled li {
+                display: flex; /* 使用flex布局，使内容在一行显示 */
+                align-items: flex-start; /* 对齐顶部 */
+                margin-top: 5px; /* 调整每行之间的间距 */
+            }
+            .list-unstyled li span {
+                margin-right: 8px; /* 调整编号与内容的间距 */
+            }
+        </style>
+        <ul class="list-unstyled">
+            {% assign papers = site.data.honors %}
+            {% for paper in papers %}
+            <li>
+                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -13,5 +13,7 @@ pages:
   url: /reports
 - name: 荣誉奖励
   url: /honors
+- name: 招生招聘
+  url: /recruit
 - name: 研究和项目
   url: /publications

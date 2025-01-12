@@ -31,7 +31,7 @@ body_attr: >-
                 </p>
                 {% endif %}
                 {% if publication.cover %}
-                <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2" style="max-width: 50%;">
+                <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
                 {% endif %}
             </div>
         </div>

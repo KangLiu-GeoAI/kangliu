@@ -13,7 +13,7 @@ abstract: >-
   <p style="margin-bottom: 0.5em;"><u><b>Liu K</b></u>*, Jin X, Cheng S, Gao S, Yin L, Lu F. Act2Loc: a synthetic trajectory generation method by combining machine learning and mechanistic models[J]. International Journal of Geographical Information Science, 2024, 38(3), 407-431.（中科院一区SCI）<a href='https://doi.org/10.1080/13658816.2023.2292570' target='_blank'>[paper]</a></p>
   <p style="margin-bottom: 0.5em;"><u><b>刘康</b></u>. 人类移动数据生成方法：研究进展与趋势探讨[J]. 地球信息科学学报, 2024, 26(4): 831-847.（国内高水平EI期刊）<a href='https://doi.org/10.12082/dqxxkx.2024.230488' target='_blank'>[paper]</a></p>
   <p style="margin-bottom: 0.5em;">陆锋, <u><b>刘康</b></u>, 陈洁. 大数据时代的人类移动性研究[J]. 地球信息科学学报, 2014, 16(5): 665-672.（国内高水平EI期刊）<a href='https://doi.org/10.3724/SP.J.1047.2014.00665' target='_blank'>[paper]</a></p>
-cover: /assets/images/covers/Act2Loc.png
+cover: /assets/images/covers/Act2Loc.jpg
 # authors:
 # links:
 ---

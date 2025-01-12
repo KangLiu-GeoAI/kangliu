@@ -11,5 +11,7 @@ pages:
   url: /patents
 - name: 会议报告
   url: /reports
+- name: 荣誉奖励
+  url: /honors
 - name: 研究和项目
   url: /publications

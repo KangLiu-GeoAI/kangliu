@@ -6,13 +6,13 @@ body_attr: >-
   data-spy="scroll" data-target="#navbar-year" data-offset="100"
 ---
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+{% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <div class="px-3 pb-1">
-        <!-- 遍历所有 publications 集合 -->
-        {% assign publications = site.publications %}
-        {% for publication in publications %}
+        <!-- 遍历所有 studies 集合 -->
+        {% assign studies = site.studies %}
+        {% for publication in studies %}
         <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
             <div class="d-flex flex-column p-3">
                 <h5 class="font-weight-normal">{{ publication.title }}</h5>

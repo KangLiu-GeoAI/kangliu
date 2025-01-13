@@ -12,9 +12,9 @@ navbar_title: Home
 {% endif %}
 
 {% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
+    {% assign count_news = site.publications | size %}
     {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+        {% include widgets/publications_card.html limit=site.data.display.homepage.num_news %}
     {% endif %}
 {% endif %}
 

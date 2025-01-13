@@ -13,5 +13,5 @@ pages:
   url: /honors
 - name: 招生招聘
   url: /recruit
-- name: 成果介绍
-  url: /publications
+- name: 代表性成果
+  url: /studies

@@ -19,7 +19,7 @@ body_attr: >-
                 <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
                 <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
                 {% if publication.abstract %}
-                <p class="small abstract-text" style="font-size: 15px; color: black;">
+                <p class="small abstract-text" style="color: black;">
                     {{ publication.abstract }}
                     {% if publication.links %}
                         {% for link in publication.links %}

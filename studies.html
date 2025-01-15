@@ -9,9 +9,9 @@ body_attr: >-
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="d-flex">
-    <!-- 左侧目录 -->
-    <div class="sticky-sidebar bg-light p-3" style="width: 200px; height: 100vh; position: sticky; top: 0; overflow-y: auto;">
-        <h5 class="border-bottom pb-2">目录</h5>
+    <!-- 右侧目录 -->
+    <div class="sticky-sidebar bg-light p-3" style="width: 150px; height: 100vh; position: sticky; top: 0; overflow-y: auto;">
+        <h6 class="border-bottom pb-2">目录</h6>
         <ul class="list-unstyled">
             {% assign categories = site.studies | map: "category" | uniq %}
             {% for category in categories %}

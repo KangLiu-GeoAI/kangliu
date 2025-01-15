@@ -8,10 +8,11 @@ body_attr: >-
 
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="d-flex">
+<div style="display: flex; width: calc(100vw + 50px);">
     <!-- 左侧目录 -->
-    <div class="sticky-sidebar bg-light p-3" 
-        style="width: 250px; position: sticky; top: 70px; left: 0; height: calc(100vh - 70px); overflow-y: auto; border-right: 1px solid #ddd;">
+    <div class="sticky-sidebar bg-light p-3"
+         style="width: 250px; position: fixed; top: 70px; left: -50px; height: calc(100vh - 70px); overflow-y: auto; border-right: 1px solid #ddd; z-index: 1000;">
+        <h6 class="font-weight-bold mb-3">目录:</h6>
         <ul class="list-unstyled mb-0">
             {% assign categories = site.studies | map: "category" | uniq %}
             {% for category in categories %}
@@ -25,7 +26,7 @@ body_attr: >-
     </div>
 
     <!-- 主内容区域 -->
-    <div class="flex-grow-1 px-3" style="margin-left: 0;">
+    <div class="flex-grow-1 px-3" style="margin-left: 250px;">
         <div class="my-3 bg-white shadow-sm rounded-sm">
             <div class="px-3 pb-1">
                 <!-- 获取所有唯一的分类 -->
@@ -34,11 +35,8 @@ body_attr: >-
                 <div class="my-4">
                     <!-- 子文件夹标题 -->
                     <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
-                        <!-- 添加占位符 -->
-                        <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
                         {{ category }}
                     </h5>
-                  
                     <!-- 遍历当前子文件夹中的研究项目 -->
                     {% assign studies = site.studies | where: "category", category %}
                     {% for publication in studies %}

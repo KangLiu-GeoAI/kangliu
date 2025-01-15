@@ -15,7 +15,7 @@ body_attr: >-
         {% for category in categories %}
         <div class="my-4">
             <!-- 子文件夹标题 -->
-            <h6 class="font-weight-bold border-bottom border-gray pb-2">{{ category }}</h6>
+            <h5 class="p-3 mb-0 border-bottom border-gray">{{ category }}</h5>
           
             <!-- 遍历当前子文件夹中的研究项目 -->
             {% assign studies = site.studies | where: "category", category %}

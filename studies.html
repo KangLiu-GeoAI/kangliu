@@ -10,14 +10,15 @@ body_attr: >-
 
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <div class="px-3 pb-1">
-        <!-- 遍历所有子文件夹 -->
-        {% assign subfolders = site.studies | map: "path" | uniq | map: "split" | map: "first" | uniq %}
-        {% for folder in subfolders %}
+        <!-- 获取所有唯一的分类 -->
+        {% assign categories = site.studies | map: "category" | uniq %}
+        {% for category in categories %}
         <div class="my-4">
             <!-- 子文件夹标题 -->
-            <h6 class="font-weight-bold border-bottom border-gray pb-2">{{ folder }}</h6>
+            <h6 class="font-weight-bold border-bottom border-gray pb-2">{{ category }</h6>
+          
             <!-- 遍历当前子文件夹中的研究项目 -->
-            {% assign studies = site.studies | where: "category", folder %}
+            {% assign studies = site.studies | where: "category", category %}
             {% for publication in studies %}
             <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
                 <div class="d-flex flex-column p-3">

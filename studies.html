@@ -9,13 +9,29 @@ body_attr: >-
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="my-3 bg-white shadow-sm rounded-sm">
+    <!-- 目录 -->
+    <div class="px-3 pb-1">
+        <ul class="list-unstyled">
+            {% assign categories = site.studies | map: "category" | uniq %}
+            {% for category in categories %}
+            <li class="mb-2">
+                <a href="#{{ category | slugify }}" class="text-decoration-none">
+                    {{ category }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="my-3 bg-white shadow-sm rounded-sm">
     <div class="px-3 pb-1">
         <!-- 获取所有唯一的分类 -->
         {% assign categories = site.studies | map: "category" | uniq %}
         {% for category in categories %}
         <div class="my-4">
             <!-- 子文件夹标题 -->
-            <h5 class="p-3 mb-0 border-bottom border-gray">{{ category }}</h5>
+            <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">{{ category }}</h5>
           
             <!-- 遍历当前子文件夹中的研究项目 -->
             {% assign studies = site.studies | where: "category", category %}

@@ -8,7 +8,8 @@ body_attr: >-
 
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="sticky-top bg-light shadow-sm py-2">
+<div class="sticky-top bg-light shadow-sm py-2" style="top: 60px; z-index: 1030;">
+    <!-- `top: 60px;` 确保目录距离导航栏下方适当的距离 -->
     <div class="container">
         <h6 class="mb-2">目录</h6>
         <ul class="list-inline mb-0">

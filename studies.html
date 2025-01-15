@@ -8,62 +8,63 @@ body_attr: >-
 
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="sticky-top bg-light shadow-sm py-2" style="top: 60px; z-index: 1030;">
-    <div class="container">
-        <h6 class="mb-2">目录</h6>
-        <ul class="list-inline mb-0">
+<div class="d-flex">
+    <!-- 右侧目录 -->
+    <div class="sticky-sidebar bg-light p-3" style="width: 150px; height: 100vh; position: sticky; top: 0; overflow-y: auto;">
+        <h6 class="border-bottom pb-2">目录</h6>
+        <ul class="list-unstyled">
             {% assign categories = site.studies | map: "category" | uniq %}
             {% for category in categories %}
-            <li class="list-inline-item mx-2">
-                <a href="#{{ category | slugify }}" class="btn btn-outline-primary btn-sm">
+            <li class="mb-2">
+                <a href="#{{ category | slugify }}" class="text-decoration-none">
                     {{ category }}
                 </a>
             </li>
             {% endfor %}
         </ul>
     </div>
-</div>
 
-<div class="my-3 bg-white shadow-sm rounded-sm">
-    <div class="px-3 pb-1">
-        <!-- 获取所有唯一的分类 -->
-        {% assign categories = site.studies | map: "category" | uniq %}
-        {% for category in categories %}
-        <div class="my-4">
-            <!-- 子文件夹标题 -->
-            <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
-              <!-- 添加占位符 -->
-              <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
-              {{ category }}
-            </h5>
-          
-            <!-- 遍历当前子文件夹中的研究项目 -->
-            {% assign studies = site.studies | where: "category", category %}
-            {% for publication in studies %}
-            <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
-                <div class="d-flex flex-column p-3">
-                    <h5 class="font-weight-normal">{{ publication.title }}</h5>
-                    <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
-                    <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
-                    {% if publication.abstract %}
-                    <p style="color: black;">
-                        {{ publication.abstract }}
-                        {% if publication.links %}
-                            {% for link in publication.links %}
-                                {% if link.first == "Paper" %}
-                                    <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    </p>
-                    {% endif %}
-                    {% if publication.cover %}
-                    <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
+  <div class="my-3 bg-white shadow-sm rounded-sm">
+      <div class="px-3 pb-1">
+          <!-- 获取所有唯一的分类 -->
+          {% assign categories = site.studies | map: "category" | uniq %}
+          {% for category in categories %}
+          <div class="my-4">
+              <!-- 子文件夹标题 -->
+              <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
+                <!-- 添加占位符 -->
+                <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
+                {{ category }}
+              </h5>
+            
+              <!-- 遍历当前子文件夹中的研究项目 -->
+              {% assign studies = site.studies | where: "category", category %}
+              {% for publication in studies %}
+              <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+                  <div class="d-flex flex-column p-3">
+                      <h5 class="font-weight-normal">{{ publication.title }}</h5>
+                      <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
+                      <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
+                      {% if publication.abstract %}
+                      <p style="color: black;">
+                          {{ publication.abstract }}
+                          {% if publication.links %}
+                              {% for link in publication.links %}
+                                  {% if link.first == "Paper" %}
+                                      <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endif %}
+                      </p>
+                      {% endif %}
+                      {% if publication.cover %}
+                      <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
+                      {% endif %}
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+          {% endfor %}
+      </div>
+  </div>
 </div>

@@ -23,19 +23,19 @@ body_attr: >-
 </style>
 
 <div class="d-flex">
-  <!-- 左侧目录 -->
-  <div class="sticky-sidebar bg-light p-3">
-    <h6 class="font-weight-bold mb-3">目录:</h6>
-    <ul class="list-unstyled mb-0">
-        {% assign categories = site.studies | map: "category" | uniq %}
-        {% for category in categories %}
-        <li class="mb-2">
-            <a href="#{{ category | slugify }}" class="text-decoration-none">
-                {{ category }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+    <!-- 左侧目录 -->
+    <div class="sticky-sidebar bg-light p-3">
+      <h6 class="font-weight-bold mb-3">目录:</h6>
+      <ul class="list-unstyled mb-0">
+          {% assign categories = site.studies | map: "category" | uniq %}
+          {% for category in categories %}
+          <li class="mb-2">
+              <a href="#{{ category | slugify }}" class="text-decoration-none">
+                  {{ category }}
+              </a>
+          </li>
+          {% endfor %}
+      </ul>
 </div>
   
 <div class="flex-grow-1 px-3">

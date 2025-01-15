@@ -10,33 +10,40 @@ body_attr: >-
 
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <div class="px-3 pb-1">
-        <!-- 遍历所有 studies 集合 -->
-        {% assign studies = site.studies %}
-        {% for publication in studies %}
-        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
-            <div class="d-flex flex-column p-3">
-                <h5 class="font-weight-normal">{{ publication.title }}</h5>
-                <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
-                <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
-                {% if publication.abstract %}
-                <p style="color: black;">
-                    {{ publication.abstract }}
-                    {% if publication.links %}
-                        {% for link in publication.links %}
-                            {% if link.first == "Paper" %}
-                                <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
-                            {% endif %}
-                        {% endfor %}
+        <!-- 遍历所有子文件夹 -->
+        {% assign subfolders = "一、轨迹生成与模拟模型研究, 二、基于轨迹大数据的城市交通治理研究, 三、基于轨迹大数据的城市传染病治理研究, 四、基于多源时空大数据的城市规划研究" | split: ", " %}
+        {% for folder in subfolders %}
+        <div class="my-4">
+            <!-- 子文件夹标题 -->
+            <h4 class="font-weight-bold border-bottom border-gray pb-2">{{ folder }}</h4>
+
+            <!-- 遍历当前子文件夹中的研究项目 -->
+            {% assign studies = site.studies | where: "category", folder %}
+            {% for publication in studies %}
+            <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+                <div class="d-flex flex-column p-3">
+                    <h5 class="font-weight-normal">{{ publication.title }}</h5>
+                    <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
+                    <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
+                    {% if publication.abstract %}
+                    <p style="color: black;">
+                        {{ publication.abstract }}
+                        {% if publication.links %}
+                            {% for link in publication.links %}
+                                {% if link.first == "Paper" %}
+                                    <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </p>
                     {% endif %}
-                </p>
-                {% endif %}
-                {% if publication.cover %}
-                <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
-                {% endif %}
+                    {% if publication.cover %}
+                    <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
+                    {% endif %}
+                </div>
             </div>
+            {% endfor %}
         </div>
         {% endfor %}
     </div>
-</div>
-
 </div>

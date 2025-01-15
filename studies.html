@@ -11,7 +11,7 @@ body_attr: >-
 <div class="d-flex">
     <!-- 左侧目录 -->
     <div class="sticky-sidebar bg-light p-3" 
-         style="width: 700px; position: sticky; top: 70px; border-right: 1px solid #ddd;">
+         style="width: 250px; position: sticky; top: 70px; border-right: 1px solid #ddd; height: calc(100vh - 70px); overflow-y: auto;">
         <h6 class="font-weight-bold mb-3">目录:</h6>
         <ul class="list-unstyled mb-0">
             {% assign categories = site.studies | map: "category" | uniq %}
@@ -24,7 +24,7 @@ body_attr: >-
             {% endfor %}
         </ul>
     </div>
-
+  
   <div class="flex-grow-1 px-3">
     <div class="my-3 bg-white shadow-sm rounded-sm">
         <div class="px-3 pb-1">

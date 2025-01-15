@@ -1,3 +1,13 @@
+---
+layout: default
+title : Studies
+navbar_title: Studies
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+---
+
+{% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+
 <div class="d-flex">
     <!-- 左侧目录 -->
     <div class="sticky-sidebar bg-light p-3" 

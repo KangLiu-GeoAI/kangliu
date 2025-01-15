@@ -9,7 +9,6 @@ body_attr: >-
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="sticky-top bg-light shadow-sm py-2" style="top: 60px; z-index: 1030;">
-    <!-- `top: 60px;` 确保目录距离导航栏下方适当的距离 -->
     <div class="container">
         <h6 class="mb-2">目录</h6>
         <ul class="list-inline mb-0">
@@ -32,7 +31,11 @@ body_attr: >-
         {% for category in categories %}
         <div class="my-4">
             <!-- 子文件夹标题 -->
-            <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">{{ category }}</h5>
+            <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
+              <!-- 添加占位符 -->
+              <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
+              {{ category }}
+            </h5>
           
             <!-- 遍历当前子文件夹中的研究项目 -->
             {% assign studies = site.studies | where: "category", category %}

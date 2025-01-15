@@ -15,8 +15,7 @@ body_attr: >-
         {% for folder in subfolders %}
         <div class="my-4">
             <!-- 子文件夹标题 -->
-            <h4 class="font-weight-bold border-bottom border-gray pb-2">{{ folder }}</h4>
-
+            <h6 class="p-3 mb-0 border-bottom border-gray">{{ folder }}</h6>
             <!-- 遍历当前子文件夹中的研究项目 -->
             {% assign studies = site.studies | where: "category", folder %}
             {% for publication in studies %}

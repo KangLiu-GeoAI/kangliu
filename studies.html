@@ -11,7 +11,7 @@ body_attr: >-
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <div class="px-3 pb-1">
         <!-- 遍历所有子文件夹 -->
-        {% assign subfolders = "一、轨迹生成与模拟模型研究, 二、基于轨迹大数据的城市交通治理研究, 三、基于轨迹大数据的城市传染病治理研究, 四、基于多源时空大数据的城市规划研究" | split: ", " %}
+        {% assign subfolders = site.studies | map: "path" | uniq | map: "split" | map: "first" | uniq %}
         {% for folder in subfolders %}
         <div class="my-4">
             <!-- 子文件夹标题 -->

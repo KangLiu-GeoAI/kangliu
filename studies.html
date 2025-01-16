@@ -10,7 +10,7 @@ body_attr: >-
 
 <div class="row">
     <div class="col-12 col-lg-10">
-        <div class="my-3 bg-white shadow-sm rounded-sm">
+        <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">
             <div class="px-3 pb-1">
                 <!-- 获取所有唯一的分类 -->
                 {% assign categories = site.studies | map: "category" | uniq %}
@@ -56,11 +56,10 @@ body_attr: >-
         </div>
     </div>
 
-    <!-- 右侧固定目录栏 -->
-    <div class="col-3 d-none d-lg-block">
-        <div id="navbar-category" class="nav nav-pills flex-column" style="position: sticky; top: 80px; width: 250px; height: 100vh; z-index: 10;">
+    <div class="col-2 d-none d-lg-block">
+        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="top: 80px;">
             {% for category in categories %}
-            <a class="nav-link d-block" href="#{{ category | slugify }}" style="white-space: nowrap;">{{ category }}</a>
+            <a class="nav-link d-block" href="#{{ category | slugify }}">{{ category }}</a>
             {% endfor %}
         </div>
     </div>

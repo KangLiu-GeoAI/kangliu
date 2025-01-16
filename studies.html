@@ -57,7 +57,7 @@ body_attr: >-
     </div>
 
     <div class="col-2 d-none d-lg-block">
-        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="top: 80px;">
+        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="top: 80px; width: 500px;">
             {% for category in categories %}
             <a class="nav-link d-block" href="#{{ category | slugify }}">{{ category }}</a>
             {% endfor %}

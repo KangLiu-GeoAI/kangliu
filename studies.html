@@ -10,11 +10,11 @@ body_attr: >-
 
 <style>
     .sticky-sidebar {
-        width: 350px !important; /* 强制设置目录宽度 */
-        position: absolute; /* 使用绝对定位 */
-        top: 100px; /* 设置目录顶部位置 */
-        left: 0; /* 设置目录左侧位置 */
-        height: calc(100vh - 70px); /* 设置目录高度 */
+        width: 300px !important; /* 设置目录宽度 */
+        position: sticky; /* 使用sticky定位 */
+        top: 100px; /* 设置目录距离顶部的距离 */
+        left: 0; /* 目录从页面左侧开始 */
+        height: calc(100vh - 70px); /* 设置目录高度，使其适应整个视口 */
         overflow-y: auto;
         border-right: 1px solid #ddd;
         z-index: 1000; /* 确保目录位于最上层 */
@@ -36,9 +36,10 @@ body_attr: >-
         text-decoration: none !important;
     }
 
+    /* 保证内容区不会被目录覆盖 */
     .content-wrapper {
-        margin-left: 320px; /* 保证目录不影响内容位置 */
-        padding-right: 20px; /* 可以根据需要调整 */
+        margin-left: 320px; /* 为内容区留出空间 */
+        padding-right: 20px; /* 适当的右侧内边距 */
     }
 </style>
 

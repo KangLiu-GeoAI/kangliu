@@ -71,8 +71,8 @@ body_attr: >-
       </ul>
     </div>
   
-<div class="flex-grow-1 px-3">
-  <div class="my-3 bg-white shadow-sm rounded-sm">
+  <div class="content-wrapper">
+      <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">
       <div class="px-3 pb-1">
           <!-- 获取所有唯一的分类 -->
           {% assign categories = site.studies | map: "category" | uniq %}

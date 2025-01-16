@@ -25,7 +25,7 @@ body_attr: >-
         z-index: 1000; /* 确保目录位于最上层 */
         padding: 10px;
         transition: width 0.3s ease; /* 增加过渡效果 */
-        transform: translateX(-200px); /* 向左平移，避免影响右侧内容 */
+        transform: translateX(-100px); /* 向左平移，避免影响右侧内容 */
     }
 
     .sticky-sidebar ul {
@@ -52,7 +52,7 @@ body_attr: >-
     /* 响应式布局：当目录变宽时，内容区域也要相应缩小 */
     .sticky-sidebar.expanded {
         width: 2000px; /* 调整目录的宽度 */
-        transform: translateX(-200px); /* 向左平移，避免右侧内容被挤压 */
+        transform: translateX(-100px); /* 向左平移，避免右侧内容被挤压 */
     }
 </style>
 

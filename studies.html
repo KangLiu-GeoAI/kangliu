@@ -10,19 +10,17 @@ body_attr: >-
 
 <style>
     .sticky-sidebar {
-        width: 3000px !important; /* 强制宽度为300px */
-        position: sticky;
-        top: 80px;
-        left: 0; /* 目录从页面左侧开始 */
-        transform: translateX(0); /* 不再移动 */
-        height: calc(100vh - 70px);
+        width: 2000px !important; /* 强制设置目录宽度 */
+        position: absolute; /* 使用绝对定位 */
+        top: 80px; /* 设置目录顶部位置 */
+        left: 0; /* 设置目录左侧位置 */
+        height: calc(100vh - 70px); /* 设置目录高度 */
         overflow-y: auto;
         border-right: 1px solid #ddd;
-        z-index: 1000;
-        display: block; /* 强制为块级元素 */
+        z-index: 1000; /* 确保目录位于最上层 */
+        padding: 10px;
     }
 
-    /* 修改目录列表的样式 */
     .sticky-sidebar ul {
         list-style: none !important;
         padding-left: 0 !important;
@@ -30,18 +28,23 @@ body_attr: >-
     }
 
     .sticky-sidebar li {
-        display: block !important;  /* 强制每个目录项占一行 */
-        margin-bottom: 10px !important; /* 适当的底部间距 */
+        display: block !important; /* 强制每个目录项占一行 */
+        margin-bottom: 10px !important;
     }
 
     .sticky-sidebar a {
-        text-decoration: none !important; /* 去掉超链接的下划线 */
+        text-decoration: none !important;
+    }
+
+    .content-wrapper {
+        margin-left: 320px; /* 保证目录不影响内容位置 */
+        padding-right: 20px; /* 可以根据需要调整 */
     }
 </style>
 
 <div class="d-flex">
     <!-- 左侧目录 -->
-    <div class="sticky-sidebar bg-light p-3">
+    <div class="sticky-sidebar bg-light">
       <ul class="list-unstyled mb-0">
           {% assign categories = site.studies | map: "category" | uniq %}
           {% for category in categories %}

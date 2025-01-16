@@ -58,7 +58,7 @@ body_attr: >-
 
     <!-- 右侧固定目录栏 -->
     <div class="col-3 d-none d-lg-block">
-        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="position: sticky; right: 0; z-index: 10;">
+        <div id="navbar-category" class="nav nav-pills flex-column" style="position: sticky; top: 80px; width: 250px; height: 100vh; z-index: 10;">
             {% for category in categories %}
             <a class="nav-link d-block" href="#{{ category | slugify }}" style="white-space: nowrap;">{{ category }}</a>
             {% endfor %}

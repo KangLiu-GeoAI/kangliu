@@ -10,15 +10,29 @@ body_attr: >-
 
 <style>
     .sticky-sidebar {
-        width: 5000px; /* 目录宽度 */
+        width: 300px; /* 调整目录宽度为300px */
         position: sticky;
         top: 80px;
         left: 0; /* 目录从页面左侧开始 */
-        transform: translateX(-200px); /* 向左移动 50 像素 */
+        transform: translateX(0); /* 不再移动 */
         height: calc(100vh - 70px);
         overflow-y: auto;
         border-right: 1px solid #ddd;
         z-index: 1000;
+    }
+
+    /* 修改目录列表的样式 */
+    .sticky-sidebar ul {
+        padding-left: 0; /* 去掉默认的内边距 */
+    }
+
+    .sticky-sidebar li {
+        display: block; /* 每个目录项占一行 */
+        margin-bottom: 10px; /* 适当的底部间距 */
+    }
+
+    .sticky-sidebar a {
+        text-decoration: none;
     }
 </style>
 
@@ -35,7 +49,7 @@ body_attr: >-
           </li>
           {% endfor %}
       </ul>
-</div>
+    </div>
   
 <div class="flex-grow-1 px-3">
   <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">

@@ -56,10 +56,10 @@ body_attr: >-
         </div>
     </div>
 
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="top: 80px">
+    <div class="col-3 d-none d-lg-block">
+        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="top: 80px; width: 250px; padding-left: 10px;">
             {% for category in categories %}
-            <a class="nav-link d-block" href="#{{ category | slugify }}">{{ category }}</a>
+            <a class="nav-link d-block" href="#{{ category | slugify }}" style="white-space: nowrap;">{{ category }}</a>
             {% endfor %}
         </div>
     </div>

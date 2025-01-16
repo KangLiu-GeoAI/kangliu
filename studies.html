@@ -8,119 +8,33 @@ body_attr: >-
 
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<style>
-    /* Flex 布局包装器 */
-    .sticky-sidebar-wrapper {
-        display: flex; /* 使用 flex 布局 */
-        justify-content: flex-start; /* 保证目录和内容排在同一行 */
-    }
-
-    /* 目录样式 */
-    .sticky-sidebar {
-        position: sticky; /* 使用 sticky 定位 */
-        top: 80px; /* 目录距离顶部的偏移 */
-        left: 0; /* 目录从页面左侧开始 */
-        width: 300px; /* 默认目录宽度 */
-        height: calc(100vh - 70px); /* 目录的高度适应视口 */
-        overflow-y: auto;
-        border-right: 1px solid #ddd;
-        z-index: 1000; /* 确保目录位于最上层 */
-        padding: 10px;
-        transition: width 0.3s ease; /* 过渡效果 */
-    }
-
-    .sticky-sidebar ul {
-        list-style: none !important;
-        padding-left: 0 !important;
-        margin: 0 !important;
-    }
-
-    .sticky-sidebar li {
-        display: block !important; /* 确保每个目录项占一行 */
-        margin-bottom: 10px !important;
-    }
-
-    .sticky-sidebar a {
-        text-decoration: none !important;
-    }
-
-    /* 右侧内容区域 */
-    .content-wrapper {
-        flex-grow: 1; /* 使内容区域占据剩余空间 */
-        padding-right: 20px; /* 适当的右侧内边距 */
-        margin-left: 320px; /* 留出空间给目录 */
-        transition: transform 0.3s ease; /* 平滑过渡右侧内容的平移 */
-    }
-
-    /* 当目录扩宽时，目录将向左扩展，右侧内容也向右平移 */
-    .sticky-sidebar.expanded {
-        width: 2000px; /* 设置目录宽度为 2000px */
-        left: -0px; /* 向左平移目录 */
-    }
-
-    .sticky-sidebar-wrapper.expanded .content-wrapper {
-        transform: translateX(1700px); /* 右侧内容向右平移1700px，确保目录扩展时不会影响布局 */
-    }
-</style>
-
-<div class="sticky-sidebar-wrapper" id="sidebar-wrapper">
-    <!-- 左侧目录 -->
-    <div class="sticky-sidebar bg-light" id="sidebar">
-      <ul class="list-unstyled mb-0">
-          {% assign categories = site.studies | map: "category" | uniq %}
-          {% for category in categories %}
-          <li>
-              <a href="#{{ category | slugify }}" class="text-decoration-none">
-                  {{ category }}
-              </a>
-          </li>
-          {% endfor %}
-      </ul>
-    </div>
-  
-    <!-- 右侧内容区域 -->
-    <div class="content-wrapper">
-      <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">
-        <div class="px-3 pb-1">
-          <!-- 获取所有唯一的分类 -->
-          {% assign categories = site.studies | map: "category" | uniq %}
-          {% for category in categories %}
-          <div class="my-4">
-              <!-- 子文件夹标题 -->
-              <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
-                <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
-                {{ category }}
-              </h5>
-            
-              <!-- 遍历当前子文件夹中的研究项目 -->
-              {% assign studies = site.studies | where: "category", category %}
-              {% for publication in studies %}
-              <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
-                  <div class="d-flex flex-column p-3">
-                      <h5 class="font-weight-normal">{{ publication.title }}</h5>
-                      <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
-                      <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
-                      {% if publication.abstract %}
-                      <p style="color: black;">
-                          {{ publication.abstract }}
-                          {% if publication.links %}
-                              {% for link in publication.links %}
-                                  {% if link.first == "Paper" %}
-                                      <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
-                                  {% endif %}
-                              {% endfor %}
-                          {% endif %}
-                      </p>
-                      {% endif %}
-                      {% if publication.cover %}
-                      <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
-                      {% endif %}
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
-          {% endfor %}
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <div class="px-3 pb-1">
+        <!-- 遍历所有 studies 集合 -->
+        {% assign studies = site.studies %}
+        {% for publication in studies %}
+        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+            <div class="d-flex flex-column p-3">
+                <h5 class="font-weight-normal">{{ publication.title }}</h5>
+                <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
+                <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
+                {% if publication.abstract %}
+                <p style="color: black;">
+                    {{ publication.abstract }}
+                    {% if publication.links %}
+                        {% for link in publication.links %}
+                            {% if link.first == "Paper" %}
+                                <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </p>
+                {% endif %}
+                {% if publication.cover %}
+                <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
+                {% endif %}
+            </div>
         </div>
-      </div>
+        {% endfor %}
     </div>
 </div>

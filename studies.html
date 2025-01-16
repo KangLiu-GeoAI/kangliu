@@ -10,7 +10,7 @@ body_attr: >-
 
 <style>
     .sticky-sidebar {
-        width: 300px; /* 调整目录宽度为300px */
+        width: 300px !important; /* 强制宽度为300px */
         position: sticky;
         top: 80px;
         left: 0; /* 目录从页面左侧开始 */
@@ -19,22 +19,23 @@ body_attr: >-
         overflow-y: auto;
         border-right: 1px solid #ddd;
         z-index: 1000;
+        display: block; /* 强制为块级元素 */
     }
 
     /* 修改目录列表的样式 */
     .sticky-sidebar ul {
-        list-style: none; /* 去掉默认的项目符号 */
-        padding-left: 0; /* 去掉默认的内边距 */
-        margin: 0; /* 去掉默认的外边距 */
+        list-style: none !important;
+        padding-left: 0 !important;
+        margin: 0 !important;
     }
 
     .sticky-sidebar li {
-        display: block; /* 强制每个目录项占一行 */
-        margin-bottom: 10px; /* 适当的底部间距 */
+        display: block !important;  /* 强制每个目录项占一行 */
+        margin-bottom: 10px !important; /* 适当的底部间距 */
     }
 
     .sticky-sidebar a {
-        text-decoration: none; /* 去掉超链接的下划线 */
+        text-decoration: none !important; /* 去掉超链接的下划线 */
     }
 </style>
 

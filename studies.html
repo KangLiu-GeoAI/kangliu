@@ -10,7 +10,7 @@ body_attr: >-
 
 <style>
     .sticky-sidebar {
-        width: 3000px; /* 调整目录宽度为300px */
+        width: 300px; /* 调整目录宽度为300px */
         position: sticky;
         top: 80px;
         left: 0; /* 目录从页面左侧开始 */
@@ -23,16 +23,18 @@ body_attr: >-
 
     /* 修改目录列表的样式 */
     .sticky-sidebar ul {
+        list-style: none; /* 去掉默认的项目符号 */
         padding-left: 0; /* 去掉默认的内边距 */
+        margin: 0; /* 去掉默认的外边距 */
     }
 
     .sticky-sidebar li {
-        display: block; /* 每个目录项占一行 */
+        display: block; /* 强制每个目录项占一行 */
         margin-bottom: 10px; /* 适当的底部间距 */
     }
 
     .sticky-sidebar a {
-        text-decoration: none;
+        text-decoration: none; /* 去掉超链接的下划线 */
     }
 </style>
 
@@ -42,7 +44,7 @@ body_attr: >-
       <ul class="list-unstyled mb-0">
           {% assign categories = site.studies | map: "category" | uniq %}
           {% for category in categories %}
-          <li class="mb-2">
+          <li>
               <a href="#{{ category | slugify }}" class="text-decoration-none">
                   {{ category }}
               </a>

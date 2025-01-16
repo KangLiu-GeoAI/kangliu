@@ -3,53 +3,65 @@ layout: default
 title : Studies
 navbar_title: Studies
 body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+  data-spy="scroll" data-target="#navbar-category" data-offset="100"
 ---
 
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="flex-grow-1 px-3">
-  <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">
-      <div class="px-3 pb-1">
-          <!-- 获取所有唯一的分类 -->
-          {% assign categories = site.studies | map: "category" | uniq %}
-          {% for category in categories %}
-          <div class="my-4">
-              <!-- 子文件夹标题 -->
-              <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
-                <!-- 添加占位符 -->
-                <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
-                {{ category }}
-              </h5>
-            
-              <!-- 遍历当前子文件夹中的研究项目 -->
-              {% assign studies = site.studies | where: "category", category %}
-              {% for publication in studies %}
-              <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
-                  <div class="d-flex flex-column p-3">
-                      <h5 class="font-weight-normal">{{ publication.title }}</h5>
-                      <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
-                      <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
-                      {% if publication.abstract %}
-                      <p style="color: black;">
-                          {{ publication.abstract }}
-                          {% if publication.links %}
-                              {% for link in publication.links %}
-                                  {% if link.first == "Paper" %}
-                                      <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
-                                  {% endif %}
-                              {% endfor %}
-                          {% endif %}
-                      </p>
-                      {% endif %}
-                      {% if publication.cover %}
-                      <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
-                      {% endif %}
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
-          {% endfor %}
-      </div>
-  </div>
+<div class="row">
+    <div class="col-12 col-lg-10">
+        <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">
+            <div class="px-3 pb-1">
+                <!-- 获取所有唯一的分类 -->
+                {% assign categories = site.studies | map: "category" | uniq %}
+                
+                {% for category in categories %}
+                <div class="my-4">
+                    <!-- 子文件夹标题 -->
+                    <h5 id="{{ category | slugify }}" class="p-3 mb-0 border-bottom border-gray">
+                        <!-- 添加占位符 -->
+                        <span class="anchor-offset" id="{{ category | slugify }}-offset"></span>
+                        {{ category }}
+                    </h5>
+                
+                    <!-- 遍历当前子文件夹中的研究项目 -->
+                    {% assign studies = site.studies | where: "category", category %}
+                    {% for publication in studies %}
+                    <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+                        <div class="d-flex flex-column p-3">
+                            <h5 class="font-weight-normal">{{ publication.title }}</h5>
+                            <p class="small mb-1 text-muted">{{ publication.authors | join: ", " }}</p>
+                            <p class="small mb-2">{{ publication.pub }} {{ publication.pub_date }}</p>
+                            {% if publication.abstract %}
+                            <p style="color: black;">
+                                {{ publication.abstract }}
+                                {% if publication.links %}
+                                    {% for link in publication.links %}
+                                        {% if link.first == "Paper" %}
+                                            <a href="{{ link.last }}" target="_blank">[{{ link.first }}]</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
+                            {% endif %}
+                            {% if publication.cover %}
+                            <img src="{{ publication.cover | relative_url }}" alt="{{ publication.title }}" class="rounded-sm mt-2 mx-auto block" style="max-width: 50%;">
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-2 d-none d-lg-block">
+        <div id="navbar-category" class="nav nav-pills flex-column sticky-top" style="top: 80px">
+            {% for category in categories %}
+            <a class="nav-link d-block" href="#{{ category | slugify }}">{{ category }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
 </div>

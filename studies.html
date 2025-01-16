@@ -9,12 +9,16 @@ body_attr: >-
 {% assign pubs_by_year = site.studies | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <style>
+    .sticky-sidebar-wrapper {
+        display: flex; /* 使用 flex 布局 */
+        justify-content: flex-start; /* 保证目录和内容排在同一行 */
+    }
+
     .sticky-sidebar {
         width: 300px !important; /* 设置目录宽度 */
-        position: sticky; /* 使用sticky定位 */
-        top: 100px; /* 设置目录距离顶部的距离 */
-        left: 0; /* 目录从页面左侧开始 */
-        height: calc(100vh - 70px); /* 设置目录高度，使其适应整个视口 */
+        position: sticky; /* 使用 sticky 定位 */
+        top: 80px; /* 目录距离顶部的偏移 */
+        height: calc(100vh - 70px); /* 目录的高度适应视口 */
         overflow-y: auto;
         border-right: 1px solid #ddd;
         z-index: 1000; /* 确保目录位于最上层 */
@@ -28,7 +32,7 @@ body_attr: >-
     }
 
     .sticky-sidebar li {
-        display: block !important; /* 强制每个目录项占一行 */
+        display: block !important; /* 确保每个目录项占一行 */
         margin-bottom: 10px !important;
     }
 
@@ -36,14 +40,13 @@ body_attr: >-
         text-decoration: none !important;
     }
 
-    /* 保证内容区不会被目录覆盖 */
     .content-wrapper {
-        margin-left: 320px; /* 为内容区留出空间 */
+        flex-grow: 1; /* 使内容区域占据剩余空间 */
         padding-right: 20px; /* 适当的右侧内边距 */
     }
 </style>
 
-<div class="d-flex">
+<div class="sticky-sidebar-wrapper">
     <!-- 左侧目录 -->
     <div class="sticky-sidebar bg-light">
       <ul class="list-unstyled mb-0">

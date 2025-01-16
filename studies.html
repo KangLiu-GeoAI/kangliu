@@ -12,20 +12,20 @@ body_attr: >-
     .sticky-sidebar-wrapper {
         display: flex; /* 使用 flex 布局 */
         justify-content: flex-start; /* 保证目录和内容排在同一行 */
+        transition: transform 0.3s ease; /* 增加过渡效果，平滑移动 */
     }
 
     .sticky-sidebar {
         position: sticky; /* 使用 sticky 定位 */
         top: 80px; /* 目录距离顶部的偏移 */
         left: 0; /* 目录从页面左侧开始 */
-        width: 2000px !important; /* 默认目录宽度 */
+        width: 300px; /* 默认目录宽度 */
         height: calc(100vh - 70px); /* 目录的高度适应视口 */
         overflow-y: auto;
         border-right: 1px solid #ddd;
         z-index: 1000; /* 确保目录位于最上层 */
         padding: 10px;
         transition: width 0.3s ease; /* 增加过渡效果 */
-        transform: translateX(-200px); /* 向左平移，避免影响右侧内容 */
     }
 
     .sticky-sidebar ul {
@@ -43,22 +43,26 @@ body_attr: >-
         text-decoration: none !important;
     }
 
-    /* 保证内容区不会被目录覆盖 */
+    /* 右侧内容区域 */
     .content-wrapper {
         flex-grow: 1; /* 使内容区域占据剩余空间 */
         padding-right: 20px; /* 适当的右侧内边距 */
+        transition: transform 0.3s ease; /* 同样的过渡效果 */
     }
 
-    /* 响应式布局：当目录变宽时，内容区域也要相应缩小 */
+    /* 当目录宽度增加时，右侧内容向右平移 */
     .sticky-sidebar.expanded {
-        width: 2000px; /* 调整目录的宽度 */
-        transform: translateX(-100px); /* 向左平移，避免右侧内容被挤压 */
+        width: 2000px; /* 增大目录宽度为2000px */
+    }
+
+    .sticky-sidebar-wrapper.expanded .content-wrapper {
+        transform: translateX(1700px); /* 右侧内容向右平移1700px，确保目录扩展时不会影响布局 */
     }
 </style>
 
-<div class="sticky-sidebar-wrapper">
+<div class="sticky-sidebar-wrapper" id="sidebar-wrapper">
     <!-- 左侧目录 -->
-    <div class="sticky-sidebar bg-light" id="sidebar" style="width: 2000px;">
+    <div class="sticky-sidebar bg-light" id="sidebar">
       <ul class="list-unstyled mb-0">
           {% assign categories = site.studies | map: "category" | uniq %}
           {% for category in categories %}
@@ -71,8 +75,9 @@ body_attr: >-
       </ul>
     </div>
   
+  <!-- 右侧内容区域 -->
   <div class="content-wrapper">
-      <div class="my-3 bg-white shadow-sm rounded-sm">
+      <div class="my-3 bg-white shadow-sm rounded-sm" style="width:1000px;">
       <div class="px-3 pb-1">
           <!-- 获取所有唯一的分类 -->
           {% assign categories = site.studies | map: "category" | uniq %}
@@ -116,3 +121,5 @@ body_attr: >-
       </div>
   </div>
 </div>
+</div>
+

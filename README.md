@@ -1,2 +1,2 @@
-# academic-homepage for Kang Liu
+# Academic Homepage for Kang Liu
 

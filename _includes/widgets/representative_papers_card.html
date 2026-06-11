@@ -1,0 +1,26 @@
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <h6 class="p-3 mb-0 border-bottom border-gray">
+        <i class="fas fa-book"></i> 代表性论文
+        <a href="{{ 'publications' | relative_url }}">(view all <i class="fas fa-angle-double-right"></i>)</a>
+    </h6>
+    <div class="px-3 pb-1">
+        <style>
+            .list-unstyled li {
+                display: flex; /* 使用flex布局，使内容在一行显示 */
+                align-items: flex-start; /* 对齐顶部 */
+                margin-top: 5px; /* 调整每行之间的间距 */
+            }
+            .list-unstyled li span {
+                margin-right: 8px; /* 调整编号与内容的间距 */
+            }
+        </style>
+        <ul class="list-unstyled">
+            {% assign papers = site.data.papers_rep %}
+            {% for paper in papers limit:include.limit %}
+            <li>
+                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ paper.content | markdownify }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

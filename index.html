@@ -11,10 +11,10 @@ navbar_title: Home
     {% include widgets/experience_card.html %}
 {% endif %}
 
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.studies | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+{% if site.data.display.homepage.show_representative_publications %}
+    {% assign count_rep_papers = site.data.papers_rep | size %}
+    {% if count_rep_papers > 0 %}
+        {% include widgets/representative_papers_card.html limit=site.data.display.homepage.num_representative_publications %}
     {% endif %}
 {% endif %}
 

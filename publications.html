@@ -5,6 +5,22 @@ navbar_title: Publications
 ---
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray", style="color: #C00000;">
+        <i class="fas fa-book"></i> 参编书籍
+    </h6>
+    <div class="px-3 pb-0">
+        <ul class="list-unstyled">
+            {% assign books = site.data.books %}
+            {% for book in books %}
+            <li>
+                <span class="font-weight-bold">[{{ forloop.index }}]</span> {{ book.content | markdownify }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <h6 class="p-3 mb-0 border-bottom border-gray", style="color: #C00000;">
         <i class="fas fa-book"></i> 全部论文（时间倒序）
     </h6>
     <div class="px-3 pb-0">

@@ -1,6 +1,6 @@
 homepage:
   show_experience: true
-  show_representative_publications: true
+  show_representative_publications: false
   num_representative_publications: 10
   show_selected_publications: false
 

@@ -13,5 +13,6 @@ pages:
   url: /honors
 - name: 招生招聘
   url: /recruit
-- name: 代表性成果
-  url: /studies
+# 暂时隐藏“代表性成果”导航入口；恢复时取消以下两行注释
+# - name: 代表性成果
+#   url: /studies
